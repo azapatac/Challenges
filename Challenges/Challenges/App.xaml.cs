@@ -1,16 +1,25 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Challenges.Settings;
+using Prism;
+using Prism.Ioc;
 
 namespace Challenges
 {
-    public partial class App : Application
+    public partial class App 
     {
-        public App ()
+        public App() : this(null) { }
+
+        public App(IPlatformInitializer initializer) : base(initializer) { }
+
+        protected override async void OnInitialized()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            await NavigationService.NavigateAsync("LoginPage");            
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {            
+            PagesContainer.Register(containerRegistry);            
         }
 
         protected override void OnStart ()
