@@ -4,59 +4,109 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:Challenges.Views.Controls"
     xmlns:images="clr-namespace:Challenges.MarkupExtension"
+    xmlns:messages="clr-namespace:Challenges.Resources.Messages"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Challenges.Views.Pages.Login.LoginPage">
-    <Grid        
-        HorizontalOptions="FillAndExpand"
-        RowDefinitions="Auto, *"
-        VerticalOptions="FillAndExpand">
+    <ScrollView>
+        <Grid        
+            HorizontalOptions="FillAndExpand"
+            RowDefinitions="Auto, *"
+            VerticalOptions="FillAndExpand">
 
-        <yummy:PancakeView
-            CornerRadius="0, 0, 30, 30"
-            HeightRequest="300">
-            <Grid>
-                <Image                    
-                    Aspect="AspectFill"                    
-                    Source="{images:ImageResource background.jpg}" />
+            <yummy:PancakeView
+                CornerRadius="0, 0, 30, 30"
+                HeightRequest="300">
+                <Grid>
+                    <Image                    
+                        Aspect="AspectFill"                    
+                        Source="{images:ImageResource background.jpg}" />
 
-                <StackLayout                    
-                    Margin="30"
-                    VerticalOptions="End">
+                    <StackLayout                    
+                        Margin="30"
+                        VerticalOptions="End">
 
-                    <Label
-                        FontSize="{StaticResource Regular22}"
-                        Text="Bienvenido a"
+                        <Label
+                            FontSize="{StaticResource Regular22}"
+                            Text="{x:Static messages:AppResources.Welcome}"
+                            TextColor="{StaticResource WhiteColor}"/>
+
+                        <Image                                               
+                            Aspect="Fill"
+                            HeightRequest="40"
+                            HorizontalOptions="StartAndExpand"
+                            Source="{images:ImageResource logo_w.png}"
+                            WidthRequest="150"
+                            />
+
+                    </StackLayout>
+                
+                </Grid>
+
+            </yummy:PancakeView>
+
+            <StackLayout
+                Grid.Row="1"
+                Padding="20">
+
+
+                <controls:EntryView                
+                    Title="{x:Static messages:AppResources.Email}"/>
+            
+                <controls:EntryView
+                    IsPassword="True"
+                    Title="{x:Static messages:AppResources.Password}"/>
+
+                <Label
+                    FontSize="{StaticResource Regular12}"
+                    Text="{x:Static messages:AppResources.RemindPassword}"
+                    TextColor="{StaticResource DarkGrayColor}"/>
+
+
+                <StackLayout
+                    Spacing="20"
+                    VerticalOptions="CenterAndExpand">
+
+                    <Button                    
+                        BackgroundColor="{StaticResource SalmonColor}"
+                        Text="{x:Static messages:AppResources.Login}"
                         TextColor="{StaticResource WhiteColor}"/>
 
-                    <Image                        
-                       
-                        Aspect="Fill"
-                        HeightRequest="40"
-                        HorizontalOptions="StartAndExpand"
-                        Source="{images:ImageResource logo_w.png}"
-                        WidthRequest="150"
-                        />
+                    <StackLayout                        
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+
+                        <Button
+                            
+                            BackgroundColor="{StaticResource LigthGrayColor}"
+                            HeightRequest="40"
+                            Margin="0"
+                            Padding="0"
+                            ImageSource="{images:ImageResource instagram_g.png}"
+                            WidthRequest="40"/>
+
+                        <Button
+                            BackgroundColor="{StaticResource LigthGrayColor}"
+                            HeightRequest="40"
+                            ImageSource="{images:ImageResource facebook_g.png}"
+                            WidthRequest="40"/>
+
+                    </StackLayout>
+
+                    <BoxView
+                        BackgroundColor="{StaticResource LigthGrayColor}"
+                        HeightRequest="2"/>
+
+                    <Button
+                        BackgroundColor="{StaticResource LigthGrayColor}"
+                        Text="{x:Static messages:AppResources.SingUp}"
+                        TextColor="{StaticResource DarkGrayColor}"/>
 
                 </StackLayout>
-                
-            </Grid>
 
-        </yummy:PancakeView>
-
-        <StackLayout
-            Grid.Row="1"
-            Padding="20">
+            </StackLayout>
 
 
-            <controls:EntryView                
-                Title="Email"/>
-            
-            <controls:EntryView
-                IsPassword="True"
-                Title="Contraseña"/>
+        </Grid>
 
-        </StackLayout>
-
-
-    </Grid>
+    </ScrollView>
 </ContentPage>

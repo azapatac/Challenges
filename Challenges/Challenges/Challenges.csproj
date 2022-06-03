@@ -49,6 +49,7 @@
     <None Remove="Xamarin.Forms.PancakeView" />
     <None Remove="Views\Controls\" />
     <None Remove="Effects\" />
+    <None Remove="Resources\Messages\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -64,6 +65,7 @@
     <Folder Include="MarkupExtension\" />
     <Folder Include="Views\Controls\" />
     <Folder Include="Effects\" />
+    <Folder Include="Resources\Messages\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\arrow_right_g.png" />
@@ -75,5 +77,16 @@
     <EmbeddedResource Include="Resources\Images\facebook_g.png" />
     <EmbeddedResource Include="Resources\Images\instagram_g.png" />
     <EmbeddedResource Include="Resources\Images\logo_w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Messages\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Messages\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
