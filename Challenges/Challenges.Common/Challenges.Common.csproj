@@ -4,4 +4,42 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+    <None Remove="Interfaces\Services\" />
+    <None Remove="Interfaces\WebServices\" />
+    <None Remove="Models\" />
+    <None Remove="Interfaces\Services\Login\" />
+    <None Remove="Interfaces\WebServices\Login\" />
+    <None Remove="Interfaces\WebServices\Base\" />
+    <None Remove="Exceptions\" />
+    <None Remove="Exceptions\WebServices\" />
+    <None Remove="Interfaces\Components\" />
+    <None Remove="Interfaces\Components\Network\" />
+    <None Remove="Constants\" />
+    <None Remove="Constants\Settings\" />
+    <None Remove="Models\Requests\" />
+    <None Remove="Models\Requests\Login\" />
+    <None Remove="Models\Response\" />
+    <None Remove="Models\Response\Login\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\Services\" />
+    <Folder Include="Interfaces\WebServices\" />
+    <Folder Include="Models\" />
+    <Folder Include="Interfaces\Services\Login\" />
+    <Folder Include="Interfaces\WebServices\Login\" />
+    <Folder Include="Interfaces\WebServices\Base\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Exceptions\WebServices\" />
+    <Folder Include="Interfaces\Components\" />
+    <Folder Include="Interfaces\Components\Network\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Constants\Settings\" />
+    <Folder Include="Models\Requests\" />
+    <Folder Include="Models\Requests\Login\" />
+    <Folder Include="Models\Responses\" />
+    <Folder Include="Models\Response\Login\" />
+  </ItemGroup>
 </Project>

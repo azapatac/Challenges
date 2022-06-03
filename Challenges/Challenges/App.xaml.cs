@@ -19,7 +19,8 @@ namespace Challenges
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {            
-            PagesContainer.Register(containerRegistry);            
+            PagesContainer.Register(containerRegistry);
+            DependencyContainer.Register(containerRegistry);
         }
 
         protected override void OnStart ()

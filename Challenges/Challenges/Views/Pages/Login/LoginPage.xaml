@@ -48,7 +48,6 @@
                 Grid.Row="1"
                 Padding="20">
 
-
                 <controls:EntryView                
                     Title="{x:Static messages:AppResources.Email}"/>
             
@@ -68,7 +67,6 @@
                     </Label.GestureRecognizers>
 
                 </Label>
-
 
                 <StackLayout
                     Spacing="20"

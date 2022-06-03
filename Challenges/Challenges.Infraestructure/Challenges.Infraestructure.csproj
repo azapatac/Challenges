@@ -4,4 +4,23 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="WebServices\" />
+    <None Remove="WebServices\Login\" />
+    <None Remove="Refit" />
+    <None Remove="WebServices\Base\" />
+    <None Remove="Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WebServices\" />
+    <Folder Include="WebServices\Login\" />
+    <Folder Include="WebServices\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Challenges.Common\Challenges.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Refit" Version="6.3.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
 </Project>

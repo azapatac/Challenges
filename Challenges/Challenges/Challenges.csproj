@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
 
@@ -52,6 +52,8 @@
     <None Remove="Effects\" />
     <None Remove="Resources\Messages\" />
     <None Remove="Xamarin.CommunityToolkit" />
+    <None Remove="Components\" />
+    <None Remove="Components\Network\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -68,6 +70,8 @@
     <Folder Include="Views\Controls\" />
     <Folder Include="Effects\" />
     <Folder Include="Resources\Messages\" />
+    <Folder Include="Components\" />
+    <Folder Include="Components\Network\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\arrow_right_g.png" />
@@ -90,5 +94,10 @@
     <Compile Update="Resources\Messages\AppResources.Designer.cs">
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Challenges.Common\Challenges.Common.csproj" />
+    <ProjectReference Include="..\Challenges.Domain\Challenges.Domain.csproj" />
+    <ProjectReference Include="..\Challenges.Infraestructure\Challenges.Infraestructure.csproj" />
   </ItemGroup>
 </Project>
