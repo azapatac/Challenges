@@ -33,6 +33,18 @@
     <None Remove="Views\" />
     <None Remove="Views\Pages\" />
     <None Remove="Views\Pages\Login\" />
+    <None Remove="Resources\" />
+    <None Remove="Resources\Images\" />
+    <None Remove="MarkupExtension\" />
+    <None Remove="Resources\Images\arrow_right_g.png" />
+    <None Remove="Resources\Images\arrow_right_w.png" />
+    <None Remove="Resources\Images\back_b.png" />
+    <None Remove="Resources\Images\background.jpg" />
+    <None Remove="Resources\Images\eye_b.png" />
+    <None Remove="Resources\Images\eye_none_b.png" />
+    <None Remove="Resources\Images\facebook_g.png" />
+    <None Remove="Resources\Images\instagram_g.png" />
+    <None Remove="Resources\Images\logo_w.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -43,5 +55,19 @@
     <Folder Include="Views\" />
     <Folder Include="Views\Pages\" />
     <Folder Include="Views\Pages\Login\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="MarkupExtension\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\arrow_right_g.png" />
+    <EmbeddedResource Include="Resources\Images\arrow_right_w.png" />
+    <EmbeddedResource Include="Resources\Images\back_b.png" />
+    <EmbeddedResource Include="Resources\Images\background.jpg" />
+    <EmbeddedResource Include="Resources\Images\eye_b.png" />
+    <EmbeddedResource Include="Resources\Images\eye_none_b.png" />
+    <EmbeddedResource Include="Resources\Images\facebook_g.png" />
+    <EmbeddedResource Include="Resources\Images\instagram_g.png" />
+    <EmbeddedResource Include="Resources\Images\logo_w.png" />
   </ItemGroup>
 </Project>
