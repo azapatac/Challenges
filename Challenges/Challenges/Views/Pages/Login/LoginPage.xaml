@@ -59,7 +59,15 @@
                 <Label
                     FontSize="{StaticResource Regular12}"
                     Text="{x:Static messages:AppResources.RemindPassword}"
-                    TextColor="{StaticResource DarkGrayColor}"/>
+                    TextColor="{StaticResource DarkGrayColor}">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding OtherOptionCommand}"
+                            CommandParameter="{x:Static messages:AppResources.RemindPassword}"/>
+                    </Label.GestureRecognizers>
+
+                </Label>
 
 
                 <StackLayout
@@ -68,29 +76,46 @@
 
                     <Button                    
                         BackgroundColor="{StaticResource SalmonColor}"
+                        Command="{Binding LoginCommand}"
                         Text="{x:Static messages:AppResources.Login}"
                         TextColor="{StaticResource WhiteColor}"/>
 
-                    <StackLayout                        
-                        HorizontalOptions="CenterAndExpand"
-                        Orientation="Horizontal">
+                    <Grid
+                        ColumnSpacing="20"
+                        HorizontalOptions="FillAndExpand">
 
-                        <Button
-                            
+                        <Frame
                             BackgroundColor="{StaticResource LigthGrayColor}"
-                            HeightRequest="40"
-                            Margin="0"
-                            Padding="0"
-                            ImageSource="{images:ImageResource instagram_g.png}"
-                            WidthRequest="40"/>
+                            CornerRadius="35"
+                            HasShadow="False"
+                            HorizontalOptions="End"
+                            Padding="15">
+                            <ImageButton
+                                Aspect="Fill"
+                                BackgroundColor="Transparent"
+                                Command="{Binding OtherOptionCommand}"
+                                CommandParameter="{x:Static messages:AppResources.Instagram}"
+                                Source="{images:ImageResource instagram_g.png}"
+                                WidthRequest="40"/>
+                        </Frame>
 
-                        <Button
+                        <Frame
+                            Grid.Column="1"
                             BackgroundColor="{StaticResource LigthGrayColor}"
-                            HeightRequest="40"
-                            ImageSource="{images:ImageResource facebook_g.png}"
-                            WidthRequest="40"/>
+                            CornerRadius="35"
+                            HasShadow="False"
+                            HorizontalOptions="Start"
+                            Padding="15">
+                            <ImageButton
+                                Aspect="Fill"
+                                BackgroundColor="Transparent"
+                                Command="{Binding OtherOptionCommand}"
+                                CommandParameter="{x:Static messages:AppResources.Facebook}"
+                                Source="{images:ImageResource facebook_g.png}"
+                                WidthRequest="40"/>
+                        </Frame>
 
-                    </StackLayout>
+                    </Grid>
 
                     <BoxView
                         BackgroundColor="{StaticResource LigthGrayColor}"
@@ -98,13 +123,14 @@
 
                     <Button
                         BackgroundColor="{StaticResource LigthGrayColor}"
+                        Command="{Binding OtherOptionCommand}"
+                        CommandParameter="{x:Static messages:AppResources.SingUp}"
                         Text="{x:Static messages:AppResources.SingUp}"
                         TextColor="{StaticResource DarkGrayColor}"/>
 
                 </StackLayout>
 
             </StackLayout>
-
 
         </Grid>
 

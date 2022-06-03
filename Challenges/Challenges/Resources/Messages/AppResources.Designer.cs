@@ -67,6 +67,24 @@ namespace Challenges.Resources.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Facebook.
+        /// </summary>
+        internal static string Facebook {
+            get {
+                return ResourceManager.GetString("Facebook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Instagram.
+        /// </summary>
+        internal static string Instagram {
+            get {
+                return ResourceManager.GetString("Instagram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string Login {

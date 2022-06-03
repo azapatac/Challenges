@@ -34,6 +34,7 @@ namespace Challenges.Views.Controls
             {
                 case nameof(IsPassword):
                     btn_eye.IsVisible = IsPassword;
+                    entry.IsPassword = IsPassword;
                     break;
 
                 case nameof(Title):
