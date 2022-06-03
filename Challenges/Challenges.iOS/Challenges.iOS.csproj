@@ -69,6 +69,7 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\iOSInitializer.cs" />
+    <Compile Include="Effects\NoUnderlineEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -139,5 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Settings\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Challenges.Views.Controls"
     xmlns:images="clr-namespace:Challenges.MarkupExtension"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="Challenges.Views.Pages.Login.LoginPage">
@@ -12,7 +13,7 @@
 
         <yummy:PancakeView
             CornerRadius="0, 0, 30, 30"
-            HeightRequest="350">
+            HeightRequest="300">
             <Grid>
                 <Image                    
                     Aspect="AspectFill"                    
@@ -43,10 +44,16 @@
         </yummy:PancakeView>
 
         <StackLayout
-            Grid.Row="1">
+            Grid.Row="1"
+            Padding="20">
 
-            <Entry
-                BackgroundColor="{StaticResource LigthGrayColor}"/>
+
+            <controls:EntryView                
+                Title="Email"/>
+            
+            <controls:EntryView
+                IsPassword="True"
+                Title="Contraseña"/>
 
         </StackLayout>
 

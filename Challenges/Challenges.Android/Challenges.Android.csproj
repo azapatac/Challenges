@@ -64,6 +64,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\AndroidInitializer.cs" />
+    <Compile Include="Effects\NoUnderlineEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -89,6 +90,7 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Settings\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Challenges\Challenges.csproj">

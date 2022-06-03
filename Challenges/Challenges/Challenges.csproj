@@ -47,6 +47,8 @@
     <None Remove="Resources\Images\instagram_g.png" />
     <None Remove="Resources\Images\logo_w.png" />
     <None Remove="Xamarin.Forms.PancakeView" />
+    <None Remove="Views\Controls\" />
+    <None Remove="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -60,6 +62,8 @@
     <Folder Include="Resources\" />
     <Folder Include="Resources\Images\" />
     <Folder Include="MarkupExtension\" />
+    <Folder Include="Views\Controls\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\arrow_right_g.png" />
