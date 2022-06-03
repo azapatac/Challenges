@@ -17,7 +17,7 @@ namespace Challenges.MarkupExtension
                 return null;
             }
 
-            var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+            var imageSource = ImageSource.FromResource($"Challenges.Resources.Images.{Source}" , typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
             return imageSource;
         }

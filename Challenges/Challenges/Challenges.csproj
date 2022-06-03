@@ -19,6 +19,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Prism.Unity.Forms" />
@@ -45,6 +46,7 @@
     <None Remove="Resources\Images\facebook_g.png" />
     <None Remove="Resources\Images\instagram_g.png" />
     <None Remove="Resources\Images\logo_w.png" />
+    <None Remove="Xamarin.Forms.PancakeView" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
