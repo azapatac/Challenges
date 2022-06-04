@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Challenges.Common.Constants.Navigation;
 using Challenges.Common.Interfaces.Services.Login;
 using Challenges.Common.Models.Login;
 using Challenges.Components.Loading;
@@ -51,7 +52,7 @@ namespace Challenges.ViewModels.Pages.Login
                     var parameters = new NavigationParameters();
                     parameters.Add("token", response.AuthorizationToken);
 
-                    await _navigationService.NavigateAsync("ChallengesPage", parameters);
+                    await _navigationService.NavigateAsync(NavigationPages.Challenges, parameters);
                 }
             }
             catch (Exception ex)
