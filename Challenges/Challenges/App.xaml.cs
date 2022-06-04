@@ -1,4 +1,6 @@
-﻿using Challenges.Settings;
+﻿using Challenges.Common.Constants.Navigation;
+using Challenges.Settings;
+using Challenges.Settings.Mapper;
 using Prism;
 using Prism.Ioc;
 
@@ -13,14 +15,14 @@ namespace Challenges
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
-            await NavigationService.NavigateAsync("LoginPage");            
+            await NavigationService.NavigateAsync(NavigationPages.Login);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {            
-            PagesContainer.Register(containerRegistry);
             DependencyContainer.Register(containerRegistry);
+            MapperContainer.Register(containerRegistry);
+            PagesContainer.Register(containerRegistry);
         }
 
         protected override void OnStart ()
@@ -36,4 +38,3 @@ namespace Challenges
         }
     }
 }
-

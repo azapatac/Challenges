@@ -9,7 +9,7 @@ using Refit;
 
 namespace Challenges.Infraestructure.WebServices.Login
 {
-    public interface ILoginEndpont
+    public interface ILoginEndpoint
     {
         [Post("/UserSignIn")]
         Task<HttpResponseMessage> Login([Body] LoginRequest login);
@@ -17,14 +17,14 @@ namespace Challenges.Infraestructure.WebServices.Login
 
 	public class LoginWebService : BaseWebService, ILoginWebService
 	{
-        private ILoginEndpont _endpoint;
+        private ILoginEndpoint _endpoint;
 
         public LoginWebService(INetworkComponent networkComponent) : base(networkComponent)
         {
-            _endpoint = GetServiceToExecute<ILoginEndpont>();
+            _endpoint = GetServiceToExecute<ILoginEndpoint>();
         }
 
-        public async Task<object> Login(LoginRequest request)
+        public async Task<LoginResponse> Login(LoginRequest request)
         {
             return await ExecuteWebService<LoginResponse>(async () => { return await _endpoint.Login(request); });
         }

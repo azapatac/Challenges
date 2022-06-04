@@ -22,6 +22,10 @@
     <None Remove="Models\Requests\Login\" />
     <None Remove="Models\Response\" />
     <None Remove="Models\Response\Login\" />
+    <None Remove="Constants\Navigation\" />
+    <None Remove="Interfaces\Services\Challenges\" />
+    <None Remove="Interfaces\WebServices\Challenges\" />
+    <None Remove="Models\Requests\Challenges\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
@@ -41,5 +45,9 @@
     <Folder Include="Models\Requests\Login\" />
     <Folder Include="Models\Responses\" />
     <Folder Include="Models\Response\Login\" />
+    <Folder Include="Constants\Navigation\" />
+    <Folder Include="Interfaces\Services\Challenges\" />
+    <Folder Include="Interfaces\WebServices\Challenges\" />
+    <Folder Include="Models\Requests\Challenges\" />
   </ItemGroup>
 </Project>

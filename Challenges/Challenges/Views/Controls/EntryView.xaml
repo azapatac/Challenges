@@ -28,7 +28,8 @@
                     <Entry
                         x:Name="entry"
                         BackgroundColor="Transparent"
-                        HeightRequest="40">
+                        HeightRequest="40"
+                        Text="{Binding Text}">
                         <Entry.Effects>
                             <effects:NoUnderlineEffect/>
                         </Entry.Effects>

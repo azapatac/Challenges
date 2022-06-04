@@ -44,6 +44,8 @@ namespace Challenges.Infraestructure.WebServices.Base
                     throw new WebServiceException("Not found");
                 case HttpStatusCode.InternalServerError:
                     throw new WebServiceException("Internal server error");
+                case HttpStatusCode.Unauthorized:
+                    throw new WebServiceException("Unauthorized");
                 default:
                     throw new Exception();
             }
@@ -61,7 +63,7 @@ namespace Challenges.Infraestructure.WebServices.Base
         {
             HttpClient = new HttpClient
             {
-                BaseAddress = new Uri(GlobalSettings.BASE_URL)
+                BaseAddress = new Uri(GlobalSettings.BASE_URL),
             };
         }
 

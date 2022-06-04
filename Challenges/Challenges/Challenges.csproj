@@ -21,6 +21,7 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.2" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Prism.Unity.Forms" />
@@ -54,6 +55,15 @@
     <None Remove="Xamarin.CommunityToolkit" />
     <None Remove="Components\" />
     <None Remove="Components\Network\" />
+    <None Remove="Views\Pages\Challenges\" />
+    <None Remove="ViewModels\Pages\Challenges\" />
+    <None Remove="ViewModels\Domain\" />
+    <None Remove="AutoMapper" />
+    <None Remove="Settings\Mapper\" />
+    <None Remove="Settings\Mapper\Profiles\" />
+    <None Remove="DataTemplates\" />
+    <None Remove="DataTemplates\Challenges\" />
+    <None Remove="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -72,6 +82,14 @@
     <Folder Include="Resources\Messages\" />
     <Folder Include="Components\" />
     <Folder Include="Components\Network\" />
+    <Folder Include="Views\Pages\Challenges\" />
+    <Folder Include="ViewModels\Pages\Challenges\" />
+    <Folder Include="ViewModels\Domain\" />
+    <Folder Include="Settings\Mapper\" />
+    <Folder Include="Settings\Mapper\Profiles\" />
+    <Folder Include="DataTemplates\" />
+    <Folder Include="DataTemplates\Challenges\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\arrow_right_g.png" />

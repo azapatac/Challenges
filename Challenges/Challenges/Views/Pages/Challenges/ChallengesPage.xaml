@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource LigthGrayColor}"
+    xmlns:messages="clr-namespace:Challenges.Resources.Messages"
+    x:Class="Challenges.Views.Pages.Challenges.ChallengesPage">
+    <StackLayout
+        Padding="0, 10">
+
+        <Label
+            FontAttributes="Bold"
+            FontSize="{StaticResource Regular24}"
+            Padding="20, 0"
+            Text="{x:Static messages:AppResources.Challenges}"
+            TextColor="{StaticResource BlackColor}"/>
+
+        <CollectionView
+            HorizontalScrollBarVisibility="Never"
+            ItemTemplate="{StaticResource ChallengesDataTemplateSelector}"
+            ItemsSource="{Binding Challenges}"
+            VerticalScrollBarVisibility="Never"/>
+
+    </StackLayout>
+</ContentPage>

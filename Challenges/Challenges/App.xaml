@@ -2,7 +2,11 @@
 <prism:PrismApplication
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:Challenges.Converters"
+    xmlns:dt="clr-namespace:Challenges.DataTemplates.Challenges"
+    xmlns:images="clr-namespace:Challenges.MarkupExtension"
     xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     x:Class="Challenges.App">
     <Application.Resources>
 
@@ -24,6 +28,158 @@
                 <Setter Property="CornerRadius" Value="15"/>
             </Style>
 
+            <Style
+                TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource LigthGrayColor}"/>
+                <Setter Property="BarTextColor" Value="{StaticResource DarkGrayColor}"/>
+            </Style>
+
+            <Style
+                TargetType="Frame">
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="xct:ShadowEffect.Color" Value="{StaticResource BlackColor}"/>
+                <Setter Property="xct:ShadowEffect.OffsetX" Value="5"/>
+                <Setter Property="xct:ShadowEffect.OffsetY" Value="5"/>
+                <Setter Property="xct:ShadowEffect.Opacity" Value=".2"/>
+                <Setter Property="xct:ShadowEffect.Radius" Value="1"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+            </Style>
+
+            <converters:PercentageToTextConverter x:Key="PercentageToTextConverter"/>
+
+            <DataTemplate x:Key="completed">                    
+                    <Grid
+                        Padding="20, 5">
+                        <Frame
+                            BackgroundColor="{StaticResource SalmonColor}"
+
+
+                            VerticalOptions="Start">
+                            <Grid
+                                ColumnDefinitions="*, auto"
+                                RowDefinitions="auto, auto, auto, auto"
+                                RowSpacing="10"
+                                Padding="15">
+
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="{StaticResource Regular16}"
+                                    Text="{Binding Title}"
+                                    TextColor="{StaticResource WhiteColor}"/>
+
+                                <Image
+                                    Grid.Column="1"
+                                    Aspect="Fill"
+                                    HeightRequest="30"
+                                    Source="{images:ImageResource arrow_right_w.png}"/>
+
+                                <Label
+                                    Grid.Row="1"
+                                    FontSize="{StaticResource Regular12}"
+                                    Text="{Binding Description}"
+                                    TextColor="{StaticResource WhiteColor}"/>
+
+                                <Label
+                                    Grid.Row="2"
+                                    FontSize="{StaticResource Regular12}"
+                                    TextColor="{StaticResource WhiteColor}">
+
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding CurrentPoints}"/>
+                                            <Span Text="{Binding TotalPoints, StringFormat='/{0}'}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+
+                                </Label>
+
+                                <Label
+                                    Grid.Column="1"
+                                    Grid.Row="2"
+                                    FontAttributes="Bold"
+                                    FontSize="{StaticResource Regular12}"
+                                    Text="{Binding Percentage, Converter={StaticResource PercentageToTextConverter}}"
+                                    TextColor="{StaticResource WhiteColor}"/>
+
+                                <ProgressBar
+                                    Grid.ColumnSpan="2"
+                                    Grid.Row="3"
+                                    Progress="{Binding Percentage}"
+                                    ProgressColor="{StaticResource WhiteColor}"/>
+                            </Grid>
+                        </Frame>
+
+                    </Grid>
+                </DataTemplate>
+            
+            <DataTemplate x:Key="incompleted">
+                <Grid
+                    Padding="20, 10">
+                    <Frame
+                        BackgroundColor="{StaticResource WhiteColor}">
+
+                        <Grid
+                            ColumnDefinitions="*, auto"
+                            RowDefinitions="auto, auto, auto, auto"
+                            RowSpacing="10"
+                            Padding="15">
+
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="{StaticResource Regular16}"
+                                Text="{Binding Title}"
+                                TextColor="{StaticResource BlackColor}"/>
+
+                            <Image
+                                Grid.Column="1"
+                                Aspect="Fill"
+                                HeightRequest="30"
+                                Source="{images:ImageResource arrow_right_g.png}"/>
+
+                            <Label
+                                Grid.Row="1"
+                                FontSize="{StaticResource Regular12}"
+                                Text="{Binding Description}"
+                                TextColor="{StaticResource DarkGrayColor}"/>
+
+                            <Label
+                                Grid.Row="2"
+                                FontSize="{StaticResource Regular12}"
+                                TextColor="{StaticResource DarkGrayColor}">
+
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrentPoints}"/>
+                                        <Span Text="{Binding TotalPoints, StringFormat='/{0}'}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+
+                            </Label>
+
+                            <Label
+                                Grid.Column="1"
+                                Grid.Row="2"
+                                FontAttributes="Bold"
+                                FontSize="{StaticResource Regular12}"
+                                Text="{Binding Percentage, Converter={StaticResource PercentageToTextConverter}}"
+                                TextColor="{StaticResource SalmonColor}"/>
+
+                            <ProgressBar
+                                Grid.ColumnSpan="2"
+                                Grid.Row="3"
+                                Progress="{Binding Percentage}"
+                                ProgressColor="{StaticResource SalmonColor}"/>
+                        </Grid>
+                    </Frame>
+
+                </Grid>
+            </DataTemplate>
+
+            <dt:ChallengesDataTemplateSelector x:Key="ChallengesDataTemplateSelector"
+                    CompletedTemplate="{StaticResource completed}"
+                    IncompletedTemplate="{StaticResource incompleted}" />
         </ResourceDictionary>
 
     </Application.Resources>

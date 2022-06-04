@@ -7,10 +7,12 @@
   <ItemGroup>
     <None Remove="Services\" />
     <None Remove="Services\Login\" />
+    <None Remove="Services\Challenges\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Services\Login\" />
+    <Folder Include="Services\Challenges\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Challenges.Common\Challenges.Common.csproj" />

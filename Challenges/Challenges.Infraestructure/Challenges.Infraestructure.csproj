@@ -10,11 +10,13 @@
     <None Remove="Refit" />
     <None Remove="WebServices\Base\" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="WebServices\Challenges\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WebServices\" />
     <Folder Include="WebServices\Login\" />
     <Folder Include="WebServices\Base\" />
+    <Folder Include="WebServices\Challenges\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Challenges.Common\Challenges.Common.csproj" />

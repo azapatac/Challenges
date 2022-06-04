@@ -2,6 +2,7 @@
 using Challenges.Common.Interfaces.Services.Login;
 using Challenges.Common.Interfaces.WebServices.Login;
 using Challenges.Common.Models.Login;
+using Challenges.Common.Models.Response.Login;
 
 namespace Challenges.Domain.Services.Login
 {
@@ -15,7 +16,7 @@ namespace Challenges.Domain.Services.Login
             _loginWebService = loginWebService;
         }
 
-        public async Task<object> Login(LoginRequest request)
+        public async Task<LoginResponse> Login(LoginRequest request)
         {
             return await _loginWebService.Login(request);
         }

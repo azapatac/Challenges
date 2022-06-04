@@ -58,6 +58,15 @@ namespace Challenges.Resources.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Retos.
+        /// </summary>
+        internal static string Challenges {
+            get {
+                return ResourceManager.GetString("Challenges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         internal static string Email {
