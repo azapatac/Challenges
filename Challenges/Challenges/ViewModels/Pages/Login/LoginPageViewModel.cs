@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Challenges.Common.Interfaces.Services.Login;
 using Challenges.Common.Models.Login;
+using Challenges.Components.Loading;
 using Challenges.ViewModels.Base;
 using Prism.Commands;
 using Prism.Navigation;
@@ -20,7 +21,7 @@ namespace Challenges.ViewModels.Pages.Login
         public ICommand LoginCommand => new AsyncCommand(Login);        
         public ICommand OtherOptionCommand => new DelegateCommand<string>(OtherOption);
 
-        public LoginPageViewModel(INavigationService navigationService, ILoginService loginService) : base(navigationService)
+        public LoginPageViewModel(INavigationService navigationService, ILoadingComponent loadingComponent, ILoginService loginService) : base(navigationService, loadingComponent)
         {
             _loginService = loginService;
 
@@ -37,18 +38,21 @@ namespace Challenges.ViewModels.Pages.Login
 
             try
             {
-                var login = new LoginRequest
+                using (_loadingComponent.Show())
                 {
-                    Email = Email,
-                    Password = Password
-                };
+                    var login = new LoginRequest
+                    {
+                        Email = Email,
+                        Password = Password
+                    };
 
-                var response = await _loginService.Login(login);
+                    var response = await _loginService.Login(login);
 
-                var parameters = new NavigationParameters();
-                parameters.Add("token", response.AuthorizationToken);
+                    var parameters = new NavigationParameters();
+                    parameters.Add("token", response.AuthorizationToken);
 
-                await _navigationService.NavigateAsync("ChallengesPage", parameters);
+                    await _navigationService.NavigateAsync("ChallengesPage", parameters);
+                }
             }
             catch (Exception ex)
             {

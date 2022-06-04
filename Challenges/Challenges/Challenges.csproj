@@ -22,6 +22,7 @@
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.2" />
     <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Prism.Unity.Forms" />
@@ -64,6 +65,11 @@
     <None Remove="DataTemplates\" />
     <None Remove="DataTemplates\Challenges\" />
     <None Remove="Converters\" />
+    <None Remove="Components\Loading\" />
+    <None Remove="Rg.Plugins.Popup" />
+    <None Remove="Views\Popups\" />
+    <None Remove="Views\Popups\Loading\" />
+    <None Remove="Delegates\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
@@ -90,6 +96,10 @@
     <Folder Include="DataTemplates\" />
     <Folder Include="DataTemplates\Challenges\" />
     <Folder Include="Converters\" />
+    <Folder Include="Components\Loading\" />
+    <Folder Include="Views\Popups\" />
+    <Folder Include="Views\Popups\Loading\" />
+    <Folder Include="Delegates\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\arrow_right_g.png" />

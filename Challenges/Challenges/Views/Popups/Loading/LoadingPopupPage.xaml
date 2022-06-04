@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:messages="clr-namespace:Challenges.Resources.Messages"
+    x:Class="Challenges.Views.Popups.Loading.LoadingPopupPage">
+    <Frame
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="CenterAndExpand"
+        >
+
+        <StackLayout                
+            Orientation="Horizontal"
+            Padding="20">
+            <ActivityIndicator
+                IsRunning="True"
+                Color="{StaticResource SalmonColor}" />
+            <Label
+                FontSize="Default"
+                FontAttributes="Bold"
+                Text="{x:Static messages:AppResources.Loading}"
+                TextColor="{StaticResource SalmonColor}"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center"/>
+        </StackLayout>
+
+    </Frame>
+</pages:PopupPage>
+

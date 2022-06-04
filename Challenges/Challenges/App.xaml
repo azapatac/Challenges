@@ -21,6 +21,7 @@
             <x:Double x:Key="Regular24">24</x:Double>
             <x:Double x:Key="Regular22">22</x:Double>
             <x:Double x:Key="Regular16">16</x:Double>
+            <x:Double x:Key="Regular14">14</x:Double>
             <x:Double x:Key="Regular12">12</x:Double>
 
             <Style
@@ -50,69 +51,71 @@
             <converters:PercentageToTextConverter x:Key="PercentageToTextConverter"/>
 
             <DataTemplate x:Key="completed">                    
-                    <Grid
-                        Padding="20, 5">
-                        <Frame
-                            BackgroundColor="{StaticResource SalmonColor}"
+                <Grid
+                    Padding="20, 5">
+                    <Frame
+                        BackgroundColor="{StaticResource SalmonColor}"
 
 
-                            VerticalOptions="Start">
-                            <Grid
-                                ColumnDefinitions="*, auto"
-                                RowDefinitions="auto, auto, auto, auto"
-                                RowSpacing="10"
-                                Padding="15">
+                        VerticalOptions="Start">
+                        <Grid
+                            ColumnDefinitions="*, auto"
+                            RowDefinitions="auto, auto, auto, auto"
+                            RowSpacing="10"
+                            Padding="15">
 
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="{StaticResource Regular16}"
-                                    Text="{Binding Title}"
-                                    TextColor="{StaticResource WhiteColor}"/>
+                            <Label
+                                FontAttributes="Bold"
+                                FontSize="{StaticResource Regular16}"
+                                Text="{Binding Title}"
+                                TextColor="{StaticResource WhiteColor}"/>
 
-                                <Image
-                                    Grid.Column="1"
-                                    Aspect="Fill"
-                                    HeightRequest="30"
-                                    Source="{images:ImageResource arrow_right_w.png}"/>
+                            <Image
+                                Grid.Column="1"
+                                Aspect="Fill"
+                                HeightRequest="30"
+                                Source="{images:ImageResource arrow_right_w.png}"/>
 
-                                <Label
-                                    Grid.Row="1"
-                                    FontSize="{StaticResource Regular12}"
-                                    Text="{Binding Description}"
-                                    TextColor="{StaticResource WhiteColor}"/>
+                            <Label
+                                Grid.Row="1"
+                                FontSize="{StaticResource Regular12}"
+                                Text="{Binding Description}"
+                                TextColor="{StaticResource WhiteColor}"/>
 
-                                <Label
-                                    Grid.Row="2"
-                                    FontSize="{StaticResource Regular12}"
-                                    TextColor="{StaticResource WhiteColor}">
+                            <Label
+                                Grid.Row="2"
+                                FontSize="{StaticResource Regular12}"
+                                TextColor="{StaticResource WhiteColor}">
 
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span Text="{Binding CurrentPoints}"/>
-                                            <Span Text="{Binding TotalPoints, StringFormat='/{0}'}"/>
-                                        </FormattedString>
-                                    </Label.FormattedText>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrentPoints}"/>
+                                        <Span Text="{Binding TotalPoints, StringFormat='/{0}'}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
 
-                                </Label>
+                            </Label>
 
-                                <Label
-                                    Grid.Column="1"
-                                    Grid.Row="2"
-                                    FontAttributes="Bold"
-                                    FontSize="{StaticResource Regular12}"
-                                    Text="{Binding Percentage, Converter={StaticResource PercentageToTextConverter}}"
-                                    TextColor="{StaticResource WhiteColor}"/>
+                            <Label
+                                Grid.Column="1"
+                                Grid.Row="2"
+                                FontAttributes="Bold"
+                                FontSize="{StaticResource Regular12}"
+                                Text="{Binding Percentage, Converter={StaticResource PercentageToTextConverter}}"
+                                TextColor="{StaticResource WhiteColor}"/>
 
-                                <ProgressBar
-                                    Grid.ColumnSpan="2"
-                                    Grid.Row="3"
-                                    Progress="{Binding Percentage}"
-                                    ProgressColor="{StaticResource WhiteColor}"/>
-                            </Grid>
-                        </Frame>
-
-                    </Grid>
-                </DataTemplate>
+                            <ProgressBar
+                                Grid.ColumnSpan="2"
+                                Grid.Row="3"
+                                Progress="{Binding Percentage}"
+                                ProgressColor="{StaticResource WhiteColor}"/>
+                        </Grid>
+                    </Frame>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectCommand}"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </DataTemplate>
             
             <DataTemplate x:Key="incompleted">
                 <Grid
@@ -173,7 +176,9 @@
                                 ProgressColor="{StaticResource SalmonColor}"/>
                         </Grid>
                     </Frame>
-
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectCommand}"/>
+                    </Grid.GestureRecognizers>
                 </Grid>
             </DataTemplate>
 

@@ -94,6 +94,15 @@ namespace Challenges.Resources.Messages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cargando....
+        /// </summary>
+        internal static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string Login {

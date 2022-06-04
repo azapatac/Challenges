@@ -8,12 +8,36 @@
     <StackLayout
         Padding="0, 10">
 
-        <Label
-            FontAttributes="Bold"
-            FontSize="{StaticResource Regular24}"
-            Padding="20, 0"
-            Text="{x:Static messages:AppResources.Challenges}"
-            TextColor="{StaticResource BlackColor}"/>
+        <Grid
+            ColumnDefinitions="*, auto">
+            <Label
+                FontAttributes="Bold"
+                FontSize="{StaticResource Regular24}"
+                Padding="20, 0"
+                Text="{x:Static messages:AppResources.Challenges}"
+                TextColor="{StaticResource BlackColor}"
+                VerticalOptions="Center"/>
+
+            <Label
+                Grid.Column="1"
+                FontSize="{StaticResource Regular14}"
+                Padding="20, 0"
+                VerticalOptions="Center">
+
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="{Binding CompletedChallenges}"
+                            TextColor="{StaticResource SalmonColor}"/>
+                        <Span
+                            Text="{Binding Challenges.Count, StringFormat='/{0}'}"
+                            TextColor="{StaticResource BlackColor}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+
+            </Label>
+
+        </Grid>
 
         <CollectionView
             HorizontalScrollBarVisibility="Never"

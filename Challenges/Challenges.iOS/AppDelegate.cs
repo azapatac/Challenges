@@ -10,6 +10,9 @@ namespace Challenges.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            UINavigationBar.Appearance.ShadowImage = new UIImage();
+
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
